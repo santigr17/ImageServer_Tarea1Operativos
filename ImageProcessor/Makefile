@@ -1,7 +1,9 @@
 
 # pip install python-magic
 # python -m pip install --user python-magic
-# https://imagemagick.org/MagickWand/
+# https://imagemagick.org/MagickWand/ 
+# Compilar make
+# probar make test0
 
 CC = gcc
 main: main.c
