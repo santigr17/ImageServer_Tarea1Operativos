@@ -4,7 +4,7 @@ After=networking.target
 
 [Service]
 Type=forking
-ExecStart=/usr/local/bin/carpeta_que_contienelos_los_scripts
+ExecStart=/usr/local/bin/carpeta_que_contienelos_el daemon
 RemainAfterExit=yes
 Restart=on-failure
 
