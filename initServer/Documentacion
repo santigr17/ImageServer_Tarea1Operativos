@@ -14,7 +14,7 @@ Restart=always					---indica reinicializacion si se produce un fallo en la inici
 [Install]
 WantedBy=multi-user.target 			---asociado para que multiples usuarios del S.O puedan utilizar el servicio ejecutado
 
-extra:
+extra(estos son algunos de los script de sistema):
 para evitar reinicializar la maquina se utiliza, en caso de presentar error por permisos de usuario se utiliza sudo:
 systemctl daemon-reload
 
