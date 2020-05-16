@@ -1,0 +1,42 @@
+las --- se indican para comentar cada linea asociada
+
+[Unit]       					--- formato
+Description=My startup scripts ImageServer   	---descripcion del archivo .service
+After=networking.target          		---indica que se inicializa despues del arranque de redes al momento del inicio del S.O ya que antes 							---puede generar que se detenga por la dependencia de la red, para de los archivos
+
+[Service]
+Type=forking					---indica que despues de la correcta inicializaon el usuario puede manipular el programa asociado
+ExecStart=/usr/local/bin/carpeta_que_contienelos_los_scripts	---direccion donde se guarda el .service y los scripts
+RemainAfterExit=yes				---despues de la ejecucion del script el servicio se marca activo
+Restart=always					---indica reinicializacion si se produce un fallo en la inicializacion de los scripts
+
+[Install]
+WantedBy=multi-user.target 			---asociado para que multiples usuarios del S.O puedan utilizar el servicio ejecutado
+
+extra:
+para evitar reinicializar la maquina se utiliza, en caso de presentar error por permisos de usuario se utiliza sudo:
+systemctl daemon-reload
+
+luego:
+systemctl start ImageServer.service
+
+Nota:Otra opcion es en modo compatibilidad:
+sudo service ImageServer start
+
+para que se inicie siempre que se ejecuta el S.O:
+systemctl enable ImageServer.service
+
+para consultar información sobre el servivio:
+systemctl status ImageServer.service
+
+
+***Link de información:
+Fernández, G., 2017. Crea Rápidamente Servicios Con Systemd Para Iniciar Demonios O Ejecutar Scripts - Poesía Binaria. [online] Poesía Binaria. Available at: <https://poesiabinaria.net/2017/12/crea-rapidamente-servicios-systemd/> [Accessed 2 May 2020].
+
+
+
+
+
+
+
+
