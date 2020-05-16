@@ -1,3 +1,4 @@
+,service se debe almacenar en : /etc/systemd/system/nombreservice.service:
 las --- se indican para comentar cada linea asociada
 
 [Unit]       					--- formato
@@ -6,8 +7,8 @@ After=networking.target          		---indica que se inicializa despues del arran
 
 [Service]
 Type=forking					---indica que despues de la correcta inicializaon el usuario puede manipular el programa asociado
-ExecStart=/usr/local/bin/carpeta_que_contienelos_los_scripts	---direccion donde se guarda el .service y los scripts
-RemainAfterExit=yes				---despues de la ejecucion del script el servicio se marca activo
+ExecStart=/usr/local/bin/carpeta_que_contiene_el_daemon	---direccion donde se guarda el daemon
+RemainAfterExit=yes				---despues de la ejecucion del daemon el servicio se marca activo
 Restart=always					---indica reinicializacion si se produce un fallo en la inicializacion de los scripts
 
 [Install]
