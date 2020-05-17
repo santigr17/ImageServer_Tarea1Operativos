@@ -1,0 +1,19 @@
+
+sudo cp /home/rodrigo/Escritorio/initServer3/ImageServer.service /etc/systemd/system/
+****/etc/systemd/system/ ----donde se debe guardar el service 
+
+sudo cp /home/rodrigo/Escritorio/state.sh /usr/local/bin
+***/usr/local/bin----Donde se debe guardar el daemon o shell-script, se debe dar permisos de ejecución
+
+
+systemctl daemon-reload     --- para evitar reiniciar la compu para usar el service
+
+Estos son los scripts de sistema
+
+sudo service ImageServer start ----iniciar el service
+
+systemctl enable ImageServer.service  --- habilitar el service para que se ejecute al iniciar la compu 
+
+
+systemctl status ImageServer.service  --- verificar el estado del service
+

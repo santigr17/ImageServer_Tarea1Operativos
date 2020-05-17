@@ -1,0 +1,13 @@
+[Unit]
+Description=Script service
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/state.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+
